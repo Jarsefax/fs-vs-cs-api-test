@@ -1,0 +1,7 @@
+*.suo
+*.js
+*.map
+src/DemoBattle/FSharpApi/bin
+src/DemoBattle/FSharpApi/obj
+src/DemoBattle/packages
+src/SimpleFront/node_modules
