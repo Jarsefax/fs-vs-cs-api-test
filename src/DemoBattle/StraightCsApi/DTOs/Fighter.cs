@@ -1,6 +1,6 @@
-﻿namespace SimpleApi.Models
+﻿namespace StraightCsApi.DTOs
 {
-    public class FighterModel
+    public class Fighter
     {
         public int Id { get; set; }
         public string Name { get; set; }

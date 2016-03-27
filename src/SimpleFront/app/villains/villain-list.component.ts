@@ -1,50 +1,39 @@
-import {Component, OnInit} from 'angular2/core';
+import {Component, Input} from 'angular2/core';
 import {HTTP_PROVIDERS} from 'angular2/http';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/Rx';
 
-import {VillainListItemComponent} from './villain-list-item.component';
-
-import {Fighter} from '../fighter'
-import {VillainService} from './service/villain.service'
+import {Fighter} from '../models/fighter'
 
 @Component({
     selector: 'villain-list',
     template: `
-        <h1>Hive of Villians</h1>
+        <h1 style="color:red;">Hive of Villians</h1>
         <table class="table table-striped table-hover">
             <thead>
                 <th>Name</th>
                 <th>Class</th>
+                <th>Select</th>
             </thead>
             <tbody>
-                <tr *ngFor="#villian of villians">
-                    <villain-list-item [villain]="villain"></villain-list-item>
+                <tr *ngFor="#villain of villains">
+                    <td>{{ villain.Name }}</td>
+                    <td>{{ villain.Class }}</td>
+                    <td>
+                        <input #{{villain.Id}} [ngModel]="villain.Selected" type="checkbox" (change)="checkbox(villain)">
+                    </td>
                 </tr>
             </tbody>
         </table>
-    `,
-    directives: [VillainListItemComponent],
-    providers: [VillainService]
+    `
 })
 
-export class VillainListComponent implements OnInit {
-    villains: Fighter[];
-    errorMessage: string;
+export class VillainListComponent {
+    @Input() villains: Fighter[];
+    private errorMessage: string;
     
-    constructor(private _villainService: VillainService) { }
-    
-    getList() {
-        this._villainService.getList()
-                     .subscribe(
-                        villains => this.villains = villains,
-                        error =>  this.errorMessage = <any>error);
-        console.log(this.villains);
-        console.log('er');
-    }
-
-    ngOnInit() {
-        this.getList();
+    checkbox(recipient) {
+        recipient.selected = (recipient.selected) ? false : true;
     }
 }
