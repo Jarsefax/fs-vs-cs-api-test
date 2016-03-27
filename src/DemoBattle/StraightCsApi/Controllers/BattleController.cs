@@ -3,6 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Cors;
+using Common;
 using Newtonsoft.Json;
 using StraightCsApi.DTOs;
 using StraightCsApi.Model;
@@ -19,27 +20,27 @@ namespace StraightCsApi.Controllers
             var anyHeroes = battle.Heroes != null && battle.Heroes.Any();
             if (anyHeroes == false && anyVillains == false)
             {
-                return new BattleResult { ResultMessage = "Most boring fight ever..." };
+                return new BattleResult { ResultMessage = CommonStrings.NoShowResultString };
             }
             if (anyHeroes && anyVillains == false)
             {
-                return new BattleResult { ResultMessage = "The cowardly villains never showed up. The Heroes wins ! ! !" };
+                return new BattleResult { ResultMessage = CommonStrings.HeroesByWalkoverResultString };
             }
             if (anyHeroes == false && anyVillains)
             {
-                return new BattleResult { ResultMessage = "The villains win (the Heroes had better things to do)." };
+                return new BattleResult { ResultMessage = CommonStrings.VillainsByWalkoverResultString };
             }
 
             var path = @"C:\Users\rnor\Documents\C#vsF#";
 
             var heroesPath = Path.Combine(path, "Heroes.txt");
-            var heroesListString = System.IO.File.ReadAllText(heroesPath);
+            var heroesListString = File.ReadAllText(heroesPath);
             var heroList = JsonConvert.DeserializeObject<List<FighterModel>>(heroesListString);
             var heroesInBattle = heroList.Where(v => battle.Heroes.Contains(v.Id)).ToList();
             var orderedHeroesInBattle = heroesInBattle.OrderByDescending(h => h.Power);
 
             var villainPath = Path.Combine(path, "Villains.txt");
-            var villainListString = System.IO.File.ReadAllText(villainPath);
+            var villainListString = File.ReadAllText(villainPath);
             var villainList = JsonConvert.DeserializeObject<List<FighterModel>>(villainListString);
             var villainsInBattle = villainList.Where(v => battle.Villains.Contains(v.Id)).ToList();
             var orderedVillainsInBattle = villainsInBattle.OrderByDescending(h => h.Power);
@@ -109,7 +110,7 @@ namespace StraightCsApi.Controllers
             {
                 return new BattleResult
                 {
-                    ResultMessage = "The Heroes stand victorious ! ! !",
+                    ResultMessage = CommonStrings.HeroesWinResultString,
                     FightersLeftStanding = heroesStandingAfterBattle
                 };
             }
@@ -129,12 +130,12 @@ namespace StraightCsApi.Controllers
             {
                 return new BattleResult
                 {
-                    ResultMessage = "The villains won the battle (the Heroes didn't want to win anyway).",
+                    ResultMessage = CommonStrings.VillainsWinResultString,
                     FightersLeftStanding = villainsStandingAfterBattle
                 };
             }
 
-            return new BattleResult { ResultMessage = "All fighters have been vanquished, neither side wins..." };
+            return new BattleResult { ResultMessage = CommonStrings.TieResultString };
         }
     }
 }

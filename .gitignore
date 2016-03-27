@@ -1,9 +1,15 @@
 *.suo
 *.js
 *.map
+src/DemoBattle/Common/bin
+src/DemoBattle/Common/obj
+src/DemoBattle/CommonTests/bin
+src/DemoBattle/CommonTests/obj
 src/DemoBattle/FSharpApi/bin
 src/DemoBattle/FSharpApi/obj
 src/DemoBattle/StraightCsApi/bin
 src/DemoBattle/StraightCsApi/obj
+src/DemoBattle/StraightFsApi/bin
+src/DemoBattle/StraightFsApi/obj
 src/DemoBattle/packages
 src/SimpleFront/node_modules

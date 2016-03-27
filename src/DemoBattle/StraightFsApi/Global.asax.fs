@@ -1,4 +1,4 @@
-namespace FSharpApi
+namespace StraightFsApi
 
 open System
 open System.Net.Http

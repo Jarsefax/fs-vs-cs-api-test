@@ -5,10 +5,6 @@ namespace StraightCsApi
 {
     public class WebApiApplication : HttpApplication
     {
-        protected void Application_Start()
-        {
-            GlobalConfiguration.Configure(Register);
-        }
 
         private static void Register(HttpConfiguration config)
         {
@@ -16,6 +12,10 @@ namespace StraightCsApi
 
             // Web API routes
             config.MapHttpAttributeRoutes();
+        }
+        protected void Application_Start()
+        {
+            GlobalConfiguration.Configure(Register);
         }
     }
 }
