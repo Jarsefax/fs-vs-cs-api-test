@@ -31,12 +31,12 @@ namespace StraightCsApi.Controllers
                 return new BattleResult { ResultMessage = CommonStrings.VillainsByWalkoverResultString };
             }
 
-            var path = @"C:\Users\rnor\Documents\C#vsF#";
+            const string path = @"C:\Users\rnor\Documents\C#vsF#";
 
             var heroesPath = Path.Combine(path, "Heroes.txt");
             var heroesListString = File.ReadAllText(heroesPath);
             var heroList = JsonConvert.DeserializeObject<List<FighterModel>>(heroesListString);
-            var heroesInBattle = heroList.Where(v => battle.Heroes.Contains(v.Id)).ToList();
+            var heroesInBattle = heroList.Where(h => battle.Heroes.Contains(h.Id)).ToList();
             var orderedHeroesInBattle = heroesInBattle.OrderByDescending(h => h.Power);
 
             var villainPath = Path.Combine(path, "Villains.txt");
@@ -47,6 +47,7 @@ namespace StraightCsApi.Controllers
 
             var heroesInBattleCount = orderedHeroesInBattle.Count();
             var villainsInBattleCount = orderedVillainsInBattle.Count();
+
             var countCompare = heroesInBattleCount.CompareTo(villainsInBattleCount);
             int shortestCount;
             if (countCompare > 0)

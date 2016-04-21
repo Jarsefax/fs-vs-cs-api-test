@@ -78,6 +78,10 @@
       <Project>{8336e7db-0e16-4249-a29f-1e1edb9e00fa}</Project>
       <Name>StraightCsApi</Name>
     </ProjectReference>
+    <ProjectReference Include="..\StraightFsApi\StraightFsApi.fsproj">
+      <Project>{f9dcbb67-5499-419f-bf8d-674fd2127495}</Project>
+      <Name>StraightFsApi</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
