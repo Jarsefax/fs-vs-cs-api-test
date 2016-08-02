@@ -3,9 +3,8 @@ using System.Web.Http;
 using System.Web.Http.Cors;
 using System.IO;
 using Newtonsoft.Json;
-using StraightCsApi.DTOs;
 
-namespace StraightCsApi.Controllers
+namespace StraightCsApi
 {
     [Route("api/villain")]
     [EnableCors(origins: "*", headers: "*", methods: "*")]

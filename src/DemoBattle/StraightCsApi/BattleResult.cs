@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace StraightCsApi.DTOs
+namespace StraightCsApi
 {
     public class BattleResult
     {

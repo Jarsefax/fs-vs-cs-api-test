@@ -2,8 +2,7 @@
 using System.Linq;
 using Common;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using StraightCsApi.Controllers;
-using StraightCsApi.DTOs;
+using StraightCsApi;
 
 namespace CommonTests
 {

@@ -5,10 +5,8 @@ using System.Web.Http;
 using System.Web.Http.Cors;
 using Common;
 using Newtonsoft.Json;
-using StraightCsApi.DTOs;
-using StraightCsApi.Model;
 
-namespace StraightCsApi.Controllers
+namespace StraightCsApi
 {
     [Route("api/battle")]
     [EnableCors(origins: "*", headers: "*", methods: "*")]

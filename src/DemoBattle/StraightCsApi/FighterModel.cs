@@ -1,4 +1,4 @@
-﻿namespace StraightCsApi.Model
+﻿namespace StraightCsApi
 {
     public class FighterModel
     {

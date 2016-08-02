@@ -1,4 +1,4 @@
-﻿namespace StraightCsApi.DTOs
+﻿namespace StraightCsApi
 {
     public class Battle
     {
