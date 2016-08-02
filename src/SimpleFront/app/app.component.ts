@@ -41,7 +41,7 @@ import 'rxjs/Rx';
 })
 
 export class AppComponent {
-    private _url = "http://localhost:51771/api/battle";
+    private _url = "http://localhost:48213/api/battle";
     
     private villains: Fighter[];
     private heroes: Fighter[];
