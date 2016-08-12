@@ -2,6 +2,9 @@
 {
     public static class CommonStrings
     {
+        public const string HeroStoragePath = @"C:\Users\rnor\Documents\C#vsF#\Heroes.txt";
+        public const string VillainStoragePath = @"C:\Users\rnor\Documents\C#vsF#\Villains.txt";
+
         public const string NoShowResultString = "Most boring fight ever...";
         public const string TieResultString = "All fighters have been vanquished, neither side wins...";
         public const string HeroesByWalkoverResultString = "The cowardly villains never showed up. The Heroes wins ! ! !";

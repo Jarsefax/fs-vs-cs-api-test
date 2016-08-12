@@ -2,6 +2,7 @@
 using System.Web.Http;
 using System.Web.Http.Cors;
 using System.IO;
+using Common;
 using Newtonsoft.Json;
 
 namespace StraightCsApi
@@ -11,6 +12,6 @@ namespace StraightCsApi
     public class HeroController : ApiController
     {
         public IEnumerable<Fighter> Get() =>
-            JsonConvert.DeserializeObject<Fighter[]>(File.ReadAllText(@"C:\Users\rnor\Documents\C#vsF#\Heroes.txt"));
+            JsonConvert.DeserializeObject<Fighter[]>(File.ReadAllText(CommonStrings.HeroStoragePath));
     }
 }

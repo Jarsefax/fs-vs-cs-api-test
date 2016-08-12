@@ -2,7 +2,8 @@
 using System.Linq;
 using Common;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using IdiomaticCs;
+using IdiomaticCsApi.Controllers;
+using IdiomaticCsApi.Model;
 
 namespace CommonTests
 {

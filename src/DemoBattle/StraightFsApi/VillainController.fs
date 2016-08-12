@@ -1,5 +1,6 @@
 ﻿namespace StraightFsApi
 
+open Common
 open Types
 open Newtonsoft.Json
 open System.IO
@@ -9,4 +10,4 @@ type VillainController() =
     inherit ApiController()
 
     member this.Get () =
-        JsonConvert.DeserializeObject<Fighter[]>(File.ReadAllText(@"C:\Users\rnor\Documents\C#vsF#\Villains.txt"))
+        JsonConvert.DeserializeObject<FighterRepresentation[]>(File.ReadAllText(CommonStrings.VillainStoragePath))

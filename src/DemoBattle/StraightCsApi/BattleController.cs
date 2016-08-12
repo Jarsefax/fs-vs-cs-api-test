@@ -33,13 +33,13 @@ namespace StraightCsApi
 
             var heroesPath = Path.Combine(path, "Heroes.txt");
             var heroesListString = File.ReadAllText(heroesPath);
-            var heroList = JsonConvert.DeserializeObject<List<FighterModel>>(heroesListString);
+            var heroList = JsonConvert.DeserializeObject<List<Fighter>>(heroesListString);
             var heroesInBattle = heroList.Where(h => battle.Heroes.Contains(h.Id)).ToList();
             var orderedHeroesInBattle = heroesInBattle.OrderByDescending(h => h.Power);
 
             var villainPath = Path.Combine(path, "Villains.txt");
             var villainListString = File.ReadAllText(villainPath);
-            var villainList = JsonConvert.DeserializeObject<List<FighterModel>>(villainListString);
+            var villainList = JsonConvert.DeserializeObject<List<Fighter>>(villainListString);
             var villainsInBattle = villainList.Where(v => battle.Villains.Contains(v.Id)).ToList();
             var orderedVillainsInBattle = villainsInBattle.OrderByDescending(h => h.Power);
 

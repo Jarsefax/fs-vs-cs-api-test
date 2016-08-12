@@ -15,7 +15,7 @@ type BattleController() =
         let anyHeroes = battle.Heroes.Length > 0
 
         if not anyHeroes && not anyVillains then 
-            { ResultMessage = CommonStrings.NoShowResultString; FightersLeftStanding = Array.empty<Fighter> }
+            { ResultMessage = CommonStrings.NoShowResultString; FightersLeftStanding = Array.empty<FighterRepresentation> }
         elif anyHeroes && not anyVillains then 
             { ResultMessage = CommonStrings.HeroesByWalkoverResultString; FightersLeftStanding = Array.empty }
         elif not anyHeroes && anyVillains then 
@@ -25,13 +25,13 @@ type BattleController() =
 
             let heroesPath = Path.Combine(path, "heroes.txt")
             let heroesListString = File.ReadAllText(heroesPath)
-            let heroList = JsonConvert.DeserializeObject<FighterModel[]> heroesListString
+            let heroList = JsonConvert.DeserializeObject<Fighter[]> heroesListString
             let heroesInBattle = heroList.Where(fun h -> battle.Heroes.Contains(h.Id))
             let orderedHeroesInBattle = heroesInBattle.OrderByDescending(fun h -> h.Power)
 
             let villainPath = Path.Combine(path, "Villains.txt")
             let villainListString = File.ReadAllText(villainPath)
-            let villainList = JsonConvert.DeserializeObject<FighterModel[]> villainListString
+            let villainList = JsonConvert.DeserializeObject<Fighter[]> villainListString
             let villainsInBattle = villainList.Where(fun v -> battle.Villains.Contains(v.Id))
             let orderedVillainsInBattle = villainsInBattle.OrderByDescending(fun v -> v.Power)
 
@@ -94,4 +94,4 @@ type BattleController() =
                 if villainsStandingAfterBattle.Any() then
                     { ResultMessage = CommonStrings.VillainsWinResultString; FightersLeftStanding = villainsStandingAfterBattle.ToArray() }
                 else
-                    { ResultMessage =  CommonStrings.TieResultString; FightersLeftStanding = Array.empty<Fighter> }
+                    { ResultMessage =  CommonStrings.TieResultString; FightersLeftStanding = Array.empty<FighterRepresentation> }

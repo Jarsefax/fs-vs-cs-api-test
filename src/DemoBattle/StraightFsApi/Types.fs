@@ -8,7 +8,7 @@ module Types =
     }
 
     [<CLIMutable>]
-    type FighterModel = {
+    type Fighter = {
         Id : int
         Name : string
         Class : string
@@ -17,7 +17,7 @@ module Types =
     }
 
     [<CLIMutable>]
-    type Fighter = {
+    type FighterRepresentation = {
         Id : int
         Name : string
         Class : string
@@ -26,5 +26,5 @@ module Types =
     [<CLIMutable>]
     type BattleResult = {
         ResultMessage : string
-        FightersLeftStanding : Fighter[]
+        FightersLeftStanding : FighterRepresentation[]
     }

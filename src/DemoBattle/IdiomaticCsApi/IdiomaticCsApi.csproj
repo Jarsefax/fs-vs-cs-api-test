@@ -80,9 +80,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\BattleController.cs" />
+    <Compile Include="Controllers\HeroController.cs" />
+    <Compile Include="Controllers\VillainController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Model\Battle.cs" />
+    <Compile Include="Model\BattleResult.cs" />
+    <Compile Include="Model\Fighter.cs" />
+    <Compile Include="Model\FighterRepresentation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
