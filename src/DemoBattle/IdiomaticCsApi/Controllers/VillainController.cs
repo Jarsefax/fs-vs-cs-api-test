@@ -1,7 +1,10 @@
-﻿using IdiomaticCsApi.Model;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Web.Http;
 using System.Web.Http.Cors;
+using IdiomaticCsApi.Domain.Common.Model;
+using IdiomaticCsApi.Domain.Common.Model.Mapping;
+using IdiomaticCsApi.Domain.Villains;
+using IdiomaticCsApi.Domain.Villains.Repositories;
 
 namespace IdiomaticCsApi.Controllers
 {
@@ -9,6 +12,14 @@ namespace IdiomaticCsApi.Controllers
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class VillainController : ApiController
     {
-        public IEnumerable<FighterRepresentation> Get() => null;
+        private readonly VillainGetter _getter;
+
+        public VillainController()
+        {
+            _getter = new VillainGetter(new FighterMapper(), new VillainRepository(new DbContext()));
+        }
+
+        public IEnumerable<FighterRepresentation> Get() =>
+            _getter.Get();
     }
 }

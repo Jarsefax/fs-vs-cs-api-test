@@ -1,4 +1,4 @@
-﻿namespace IdiomaticCsApi.Model
+﻿namespace IdiomaticCsApi.Domain.Common.Model
 {
     public class FighterRepresentation
     {

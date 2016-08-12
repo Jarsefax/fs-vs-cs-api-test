@@ -1,6 +1,6 @@
-﻿namespace IdiomaticCsApi.Model
+﻿namespace IdiomaticCsApi.Domain.Common.Model
 {
-    public class Fighter
+    public abstract class Fighter
     {
         public int Id { get; set; }
         public string Name { get; set; }

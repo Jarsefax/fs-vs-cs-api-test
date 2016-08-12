@@ -1,9 +1,9 @@
 ﻿using Microsoft.Owin;
 using Owin;
-using CsApi;
+using IdiomaticCsApi;
 
 [assembly: OwinStartup(typeof(Startup))]
-namespace CsApi
+namespace IdiomaticCsApi
 {
     public partial class Startup
     {

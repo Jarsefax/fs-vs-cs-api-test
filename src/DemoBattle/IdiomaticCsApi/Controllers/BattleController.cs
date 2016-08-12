@@ -1,6 +1,6 @@
-﻿using IdiomaticCsApi.Model;
-using System.Web.Http;
+﻿using System.Web.Http;
 using System.Web.Http.Cors;
+using IdiomaticCsApi.Domain.Battles.Model;
 
 namespace IdiomaticCsApi.Controllers
 {

@@ -1,7 +1,7 @@
-﻿using IdiomaticCsApi.Model;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Web.Http;
 using System.Web.Http.Cors;
+using IdiomaticCsApi.Domain.Common.Model;
 
 namespace IdiomaticCsApi.Controllers
 {

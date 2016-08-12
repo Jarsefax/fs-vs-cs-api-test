@@ -1,4 +1,4 @@
-﻿namespace IdiomaticCsApi.Model
+﻿namespace IdiomaticCsApi.Domain.Battles.Model
 {
     public class Battle
     {

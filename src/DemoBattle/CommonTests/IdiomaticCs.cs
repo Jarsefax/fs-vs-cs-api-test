@@ -3,7 +3,7 @@ using System.Linq;
 using Common;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using IdiomaticCsApi.Controllers;
-using IdiomaticCsApi.Model;
+using IdiomaticCsApi.Domain.Battles.Model;
 
 namespace CommonTests
 {

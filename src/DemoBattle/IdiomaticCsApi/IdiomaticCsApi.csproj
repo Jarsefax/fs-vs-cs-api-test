@@ -80,17 +80,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DbContext.cs" />
     <Compile Include="Controllers\BattleController.cs" />
     <Compile Include="Controllers\HeroController.cs" />
     <Compile Include="Controllers\VillainController.cs" />
+    <Compile Include="Domain\Villains\VillainGetter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Model\Battle.cs" />
-    <Compile Include="Model\BattleResult.cs" />
-    <Compile Include="Model\Fighter.cs" />
-    <Compile Include="Model\FighterRepresentation.cs" />
+    <Compile Include="Domain\Common\Model\Mapping\FighterMapper.cs" />
+    <Compile Include="Domain\Battles\Model\Battle.cs" />
+    <Compile Include="Domain\Battles\Model\BattleResult.cs" />
+    <Compile Include="Domain\Common\Model\Fighter.cs" />
+    <Compile Include="Domain\Common\Model\FighterRepresentation.cs" />
+    <Compile Include="Domain\Villains\Model\Villain.cs" />
+    <Compile Include="Domain\Common\Model\Mapping\IModelMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Domain\Common\IRepository.cs" />
+    <Compile Include="Domain\Villains\Repositories\VillainRepository.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -103,9 +110,17 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{136a75df-f79d-45af-a25d-a5d638efa862}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Domain\Heroes\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
