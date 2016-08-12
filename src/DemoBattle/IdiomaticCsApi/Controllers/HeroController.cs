@@ -2,6 +2,9 @@
 using System.Web.Http;
 using System.Web.Http.Cors;
 using IdiomaticCsApi.Domain.Common.Model;
+using IdiomaticCsApi.Domain.Common.Model.Mapping;
+using IdiomaticCsApi.Domain.Heroes;
+using IdiomaticCsApi.Domain.Heroes.Repositories;
 
 namespace IdiomaticCsApi.Controllers
 {
@@ -9,6 +12,14 @@ namespace IdiomaticCsApi.Controllers
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class HeroController : ApiController
     {
-        public IEnumerable<FighterRepresentation> Get() => null;
+        private readonly GetHeroesHandler _handler;
+
+        public HeroController()
+        {
+            _handler = new GetHeroesHandler(new FighterMapper(), new HeroRepository(new DbContext()));
+        }
+
+        public IEnumerable<FighterRepresentation> Get() =>
+            _handler.Get();
     }
 }

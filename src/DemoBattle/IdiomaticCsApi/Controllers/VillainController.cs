@@ -12,14 +12,14 @@ namespace IdiomaticCsApi.Controllers
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class VillainController : ApiController
     {
-        private readonly VillainGetter _getter;
+        private readonly GetVillainsHandler _handler;
 
         public VillainController()
         {
-            _getter = new VillainGetter(new FighterMapper(), new VillainRepository(new DbContext()));
+            _handler = new GetVillainsHandler(new FighterMapper(), new VillainRepository(new DbContext()));
         }
 
         public IEnumerable<FighterRepresentation> Get() =>
-            _getter.Get();
+            _handler.Get();
     }
 }

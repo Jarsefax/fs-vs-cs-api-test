@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using IdiomaticCsApi.Domain.Common;
 using IdiomaticCsApi.Domain.Villains.Model;
 
