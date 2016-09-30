@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using IdiomaticCsApi.DTOs;
 
 namespace IdiomaticCsApi.Domain.Common.Model.Mapping
 {

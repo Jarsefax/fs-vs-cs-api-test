@@ -84,23 +84,37 @@
     <Compile Include="Controllers\BattleController.cs" />
     <Compile Include="Controllers\HeroController.cs" />
     <Compile Include="Controllers\VillainController.cs" />
+    <Compile Include="Domain\Battles\BattleHandler.cs" />
+    <Compile Include="Domain\Battles\Comparing\IntComparer.cs" />
+    <Compile Include="Domain\Battles\DefeatedFightersFilterer.cs" />
+    <Compile Include="Domain\Battles\Fighting\FightHandler.cs" />
+    <Compile Include="Domain\Battles\Fighting\IFightHandler.cs" />
+    <Compile Include="Domain\Battles\Fighting\FightResolver.cs" />
+    <Compile Include="Domain\Battles\Fighting\IFightResolver.cs" />
+    <Compile Include="Domain\Battles\Ordering\FighterOrderer.cs" />
+    <Compile Include="Domain\Battles\Comparing\IComparer.cs" />
+    <Compile Include="Domain\Battles\Ordering\IOrderer.cs" />
+    <Compile Include="Domain\Battles\Resolvers\BattleResolver.cs" />
+    <Compile Include="Domain\Battles\Resolvers\IBattleResolver.cs" />
+    <Compile Include="Domain\Battles\Resolvers\IWalkoverResolver.cs" />
+    <Compile Include="Domain\Battles\Resolvers\WalkoverResolver.cs" />
     <Compile Include="Domain\Heroes\GetHeroesHandler.cs" />
     <Compile Include="Domain\Heroes\Model\Hero.cs" />
-    <Compile Include="Domain\Heroes\Repositories\HeroRepository.cs" />
+    <Compile Include="Domain\Common\Repositories\HeroRepository.cs" />
     <Compile Include="Domain\Villains\GetVillainsHandler.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Domain\Common\Model\Mapping\FighterMapper.cs" />
-    <Compile Include="Domain\Battles\Model\Battle.cs" />
-    <Compile Include="Domain\Battles\Model\BattleResult.cs" />
+    <Compile Include="DTOs\Battle.cs" />
+    <Compile Include="DTOs\BattleResult.cs" />
     <Compile Include="Domain\Common\Model\Fighter.cs" />
-    <Compile Include="Domain\Common\Model\FighterRepresentation.cs" />
+    <Compile Include="DTOs\FighterRepresentation.cs" />
     <Compile Include="Domain\Villains\Model\Villain.cs" />
     <Compile Include="Domain\Common\Model\Mapping\IModelMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Domain\Common\IRepository.cs" />
-    <Compile Include="Domain\Villains\Repositories\VillainRepository.cs" />
+    <Compile Include="Domain\Common\Repositories\IRepository.cs" />
+    <Compile Include="Domain\Common\Repositories\VillainRepository.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>

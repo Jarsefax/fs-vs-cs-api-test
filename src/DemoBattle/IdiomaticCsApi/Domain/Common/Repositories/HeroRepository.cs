@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using IdiomaticCsApi.Domain.Common;
+using System.Linq;
 using IdiomaticCsApi.Domain.Heroes.Model;
 
-namespace IdiomaticCsApi.Domain.Heroes.Repositories
+namespace IdiomaticCsApi.Domain.Common.Repositories
 {
     public class HeroRepository : IRepository<Hero>
     {
@@ -15,5 +15,8 @@ namespace IdiomaticCsApi.Domain.Heroes.Repositories
 
         public IEnumerable<Hero> GetAll() =>
             _context.Heroes;
+
+        public IEnumerable<Hero> GetByIds(IEnumerable<int> ids) =>
+            _context.Heroes.Where(h => ids.Contains(h.Id));
     }
 }

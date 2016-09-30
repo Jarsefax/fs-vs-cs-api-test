@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using IdiomaticCsApi.Domain.Common;
+using System.Linq;
 using IdiomaticCsApi.Domain.Villains.Model;
 
-namespace IdiomaticCsApi.Domain.Villains.Repositories
+namespace IdiomaticCsApi.Domain.Common.Repositories
 {
     public class VillainRepository : IRepository<Villain>
     {
@@ -15,5 +15,8 @@ namespace IdiomaticCsApi.Domain.Villains.Repositories
 
         public IEnumerable<Villain> GetAll() =>
             _context.Villains;
+
+        public IEnumerable<Villain> GetByIds(IEnumerable<int> ids) =>
+            _context.Villains.Where(h => ids.Contains(h.Id));
     }
 }

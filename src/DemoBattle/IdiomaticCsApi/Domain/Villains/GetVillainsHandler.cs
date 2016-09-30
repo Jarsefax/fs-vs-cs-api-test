@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
-using IdiomaticCsApi.Domain.Common;
 using IdiomaticCsApi.Domain.Common.Model;
 using IdiomaticCsApi.Domain.Common.Model.Mapping;
+using IdiomaticCsApi.Domain.Common.Repositories;
 using IdiomaticCsApi.Domain.Villains.Model;
+using IdiomaticCsApi.DTOs;
 
 namespace IdiomaticCsApi.Domain.Villains
 {

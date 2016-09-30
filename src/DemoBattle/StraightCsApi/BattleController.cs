@@ -24,7 +24,7 @@ namespace StraightCsApi
             {
                 return new BattleResult { ResultMessage = CommonStrings.HeroesByWalkoverResultString };
             }
-            if (anyHeroes == false && anyVillains)
+            if (anyHeroes == false)
             {
                 return new BattleResult { ResultMessage = CommonStrings.VillainsByWalkoverResultString };
             }

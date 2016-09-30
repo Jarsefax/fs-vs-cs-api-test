@@ -3,7 +3,7 @@ using System.Linq;
 using Common;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using IdiomaticCsApi.Controllers;
-using IdiomaticCsApi.Domain.Battles.Model;
+using IdiomaticCsApi.DTOs;
 
 namespace CommonTests
 {
@@ -35,7 +35,7 @@ namespace CommonTests
                 Villains = new List<int>().ToArray()
             };
 
-            var battleResult = new BattleController().Post(battle);
+            var battleResult = new BattleController().Post(battle).Result;
 
             Assert.AreEqual(CommonStrings.NoShowResultString, battleResult.ResultMessage);
         }
@@ -49,7 +49,7 @@ namespace CommonTests
                 Villains = new[] { 1, 2 }
             };
 
-            var battleResult = new BattleController().Post(battle);
+            var battleResult = new BattleController().Post(battle).Result;
 
             Assert.AreEqual(CommonStrings.TieResultString, battleResult.ResultMessage);
         }
@@ -64,7 +64,7 @@ namespace CommonTests
                 Villains = new List<int>().ToArray()
             };
 
-            var battleResult = new BattleController().Post(battle);
+            var battleResult = new BattleController().Post(battle).Result;
 
             Assert.AreEqual(CommonStrings.HeroesByWalkoverResultString, battleResult.ResultMessage);
         }
@@ -79,7 +79,7 @@ namespace CommonTests
                 Heroes = new List<int>().ToArray()
             };
 
-            var battleResult = new BattleController().Post(battle);
+            var battleResult = new BattleController().Post(battle).Result;
 
             Assert.AreEqual(CommonStrings.VillainsByWalkoverResultString, battleResult.ResultMessage);
         }
@@ -94,7 +94,7 @@ namespace CommonTests
                 Villains = new[] { 1 }
             };
 
-            var battleResult = new BattleController().Post(battle);
+            var battleResult = new BattleController().Post(battle).Result;
 
             Assert.AreEqual(CommonStrings.HeroesWinResultString, battleResult.ResultMessage);
         }
@@ -109,7 +109,7 @@ namespace CommonTests
                 Heroes = new []{ 1 }
             };
 
-            var battleResult = new BattleController().Post(battle);
+            var battleResult = new BattleController().Post(battle).Result;
 
             Assert.AreEqual(CommonStrings.VillainsWinResultString, battleResult.ResultMessage);
         }

@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
 using System.Web.Http.Cors;
-using IdiomaticCsApi.Domain.Common.Model;
 using IdiomaticCsApi.Domain.Common.Model.Mapping;
+using IdiomaticCsApi.Domain.Common.Repositories;
 using IdiomaticCsApi.Domain.Villains;
-using IdiomaticCsApi.Domain.Villains.Repositories;
+using IdiomaticCsApi.DTOs;
 
 namespace IdiomaticCsApi.Controllers
 {

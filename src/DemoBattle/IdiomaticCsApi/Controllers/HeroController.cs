@@ -3,8 +3,9 @@ using System.Web.Http;
 using System.Web.Http.Cors;
 using IdiomaticCsApi.Domain.Common.Model;
 using IdiomaticCsApi.Domain.Common.Model.Mapping;
+using IdiomaticCsApi.Domain.Common.Repositories;
 using IdiomaticCsApi.Domain.Heroes;
-using IdiomaticCsApi.Domain.Heroes.Repositories;
+using IdiomaticCsApi.DTOs;
 
 namespace IdiomaticCsApi.Controllers
 {
